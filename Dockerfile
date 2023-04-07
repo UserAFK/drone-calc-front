@@ -8,7 +8,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Клонуйте ваш репозиторій GitHub
-RUN git clone --branch dev https://github.com/UserAFK/DroneCalculationFrontEndApp.git .
+RUN git clone --branch dev https://github.com/UserAFK/drone-calc-front.git .
 
 # Встановіть залежності та зібрайте ваш додаток
 RUN npm ci
@@ -20,4 +20,3 @@ FROM nginx:stable-bullseye
 COPY --from=prod /app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
