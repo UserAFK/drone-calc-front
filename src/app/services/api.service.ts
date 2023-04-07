@@ -9,6 +9,6 @@ export class ApiService {
   private apiUrl = 'http://localhost:5000/api';
   constructor(private http: HttpClient) { }
   getProducts() {
-    return this.http.get<any[]>(`${this.apiUrl}/drones`);
+    return this.http.get<any[]>(`${this.apiUrl}/drone`);
   }
 }
